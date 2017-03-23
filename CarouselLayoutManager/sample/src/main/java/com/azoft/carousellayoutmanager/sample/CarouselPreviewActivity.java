@@ -53,22 +53,12 @@ public class CarouselPreviewActivity extends AppCompatActivity {
     }
 
     private static final class TestAdapter extends RecyclerView.Adapter<TestViewHolder> {
-
-        @SuppressWarnings("UnsecureRandomNumberGeneration")
-        private final int[] mPosition;
-        private int mItemsCount = 5;
-
-        TestAdapter() {
-            mPosition = new int[mItemsCount];
-            for (int i = 0; mItemsCount > i; ++i) {
-                //noinspection MagicNumber
-                mPosition[i] = i;
-            }
-        }
+        private final static int ITEMS = 5;
 
         @Override
         public TestViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
-            return new TestViewHolder(ItemViewBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+            return new TestViewHolder(ItemViewBinding.inflate(
+                LayoutInflater.from(parent.getContext()), parent, false));
         }
 
         @Override
@@ -78,7 +68,7 @@ public class CarouselPreviewActivity extends AppCompatActivity {
 
         @Override
         public int getItemCount() {
-            return mItemsCount;
+            return ITEMS;
         }
     }
 
