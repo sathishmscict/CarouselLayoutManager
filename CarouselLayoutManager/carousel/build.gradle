@@ -75,13 +75,13 @@ install {
 //////////////////////////////// Upload to BinTray ////////////////////////////////
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     resourcePrefix "carousellayoutmanager__"
 
     defaultConfig {
-        minSdkVersion 11
-        targetSdkVersion 25
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName version
     }
@@ -98,11 +98,9 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-v4:25.0.0'
-    compile 'com.android.support:design:25.0.0'
-    compile 'com.android.support:recyclerview-v7:25.0.0'
-    javadocDeps 'com.android.support:support-annotations:25.0.0'
-    javadocDeps 'com.android.support:recyclerview-v7:25.0.0'
+    compile "com.android.support:support-v4:$rootProject.ext.support"
+    compile "com.android.support:design:$rootProject.ext.support"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.support"
 }
 
 task sourcesJar(type: Jar) {

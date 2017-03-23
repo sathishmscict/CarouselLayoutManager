@@ -13,6 +13,27 @@ allprojects {
     }
 }
 
+ext {
+    buildToolsVersion = "25.0.2"
+    compileSdkVersion = 25
+    targetSdkVersion = 25
+    minSdkVersion = 19
+    support = '25.3.0'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    GOOGLE_PLAY_SERVICES = "10.0.1"
+    ANDROID_SUPPORT_LIBRARY = "24.2.1"
+    CONSTRAINT_LAYOUT = "1.0.2"
+
+    FACEBOOK_APP_ID = "836210163094288"
+    ANALYTICS_ID = "UA-68533317-1"
+    SUPPORT_EMAIL = "support@mypopsy.com"
+    REPORT_EMAIL = "report-abuse@mypopsy.com"
+}
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
